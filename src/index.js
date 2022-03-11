@@ -1,6 +1,11 @@
 //Import Styles
 import '../src/styles.scss';
 
+//Import images
+import "../src/assets/img/01.jpg";
+import "../src/assets/img/02.jpg";
+import "../src/assets/img/03.jpg";
+
 const mountains = document.querySelector('.parallax__mountains');
 const hero = document.querySelector('.parallax__hero');
 const siteTitle = document.querySelector('.main__content');
@@ -36,17 +41,6 @@ for (let anchor of anchors) {
 
 
 
-/*const searchOptions = document.querySelectorAll(".main-section__search-options-btn");
-
-for (const searchOption of searchOptions) {
-  searchOption.addEventListener("click", ()=> {
-    searchOptions.forEach((searchOption)=> {
-      searchOption.classList.remove("main-section__search-options-btn_active")
-    })
-  searchOption.classList.add("main-section__search-options-btn_active")
-  })
-}*/
-
 const slidebarItems = document.querySelectorAll('.sidebar__item');
 
 for(const slidebarItem of slidebarItems) {
@@ -59,10 +53,8 @@ for(const slidebarItem of slidebarItems) {
 }
 
 
-// функция всего лишь добавляет CSS-класс, который и осуществляет анимацию
 const scrollImations = (entries, observer) => {
 	entries.forEach((entry) => {
-		// анимируем, если элемент целиком попадает в отслеживаемую область
 		if(entry.isIntersecting && entry.intersectionRatio == 1) {
 			
       console.log(entry);
@@ -72,7 +64,6 @@ const scrollImations = (entries, observer) => {
 	});
 }
 
-// создаём обсервер с параметрами
 const options = {
 	threshold: 1.0,
 };
@@ -84,20 +75,6 @@ boxes.forEach((box) => {
 });
 
 
-
-
-
-
-/*const mountains = document.querySelector('.parallax-images__mountains');
-const human = document.querySelector('.parallax-images__human');
-const clouds = document.querySelector('.parallax-images__clouds');
-
-window.addEventListener('scroll', function() {
-  var value = window.scrollY;
-  mountains.style.top = 40 - (value * 0.03) + '%';
-  clouds.style.top = -(value * 0.04) + '%';
-  human.style.top = 66 - (value * 0.01) + '%';
-})
 
 
 
