@@ -1,0 +1,54 @@
+extends /layouts/default/default.pug
+
+block content
+  sidebar.sidebar
+    ul.sidebar__list
+      li.sidebar__item.sidebar__item_active
+        a.sidebar__link(href='#start') Start
+      li.sidebar__item
+        a.sidebar__link(href='#01') 01
+      li.sidebar__item
+        a.sidebar__link(href='#02') 02
+      li.sidebar__item
+        a.sidebar__link(href='#03') 03
+  section.main
+    .main__parallax.parallax
+      .main__content-section
+        aside.main__socials.socials
+          p.socials__text Follow us
+          a.socials__link.icon-font.icon-font_instagram(href='https://www.instagram.com/' target='_blank')
+          a.socials__link.icon-font.icon-font_twitter(href='https://twitter.com/' target='_blank')
+        .main__content
+          h3.main__subtitle A Hiking guide
+          h1.main__title Be Prepared For The Mountains And beyond!
+          a.main__link(href='#01') scroll down
+        .main__plug
+      .parallax__clouds
+      .parallax__mountains
+      .parallax__fog
+      .parallax__hero
+  .shadow
+  .content-wrapper
+    section.started.content-section( id='01')
+      .started__content
+        h3.started__subtitle GEt Started
+        h2.started__title What level of  hiker are you?
+        .started__text.content-section__text Determining what level of hiker you are can be an important tool when planning future hikes. This hiking level guide will help you plan hikes according to different hike ratings set by various websites like All Trails and Modern Hiker. What type of hiker are you – novice, moderate, advanced moderate, expert, or expert backpacker? 
+        a.started__link.content-section__link(href='404.html') read more
+      img.started__image.content-section__image.ancor(src='./assets/img/01.jpg')
+      
+    section.hiking.content-section( id='02')
+      img.hiking__image.content-section__image.ancor(src='./assets/img/02.jpg')
+      .hiking__content
+        h3.hiking__subtitle Hiking Essentials
+        h2.hiking__title Picking the right Hiking Gear!
+        .hiking__text.content-section__text The nice thing about beginning hiking is that you don’t really need any special gear, you can probably get away with things you already have. Let’s start with clothing. A typical mistake hiking beginners make is wearing jeans and regular clothes, which will get heavy and chafe wif they get sweaty or wet. 
+        a.hiking__link.content-section__link(href='404.html') read more
+      
+    section.map.content-section( id='03')
+      .map__content
+        h3.map__subtitle where you go is the key
+        h2.map__title Understand Your Map & Timing
+        .map__text.content-section__text To start, print out the hiking guide and map. If it’s raining, throw them in a Zip-Lock bag. Read over the guide, study the map, and have a good idea of what to expect. I like to know what my next landmark is as I hike. For example, I’ll read the guide and know that say, in a mile, I make a right turn at the junction... 
+        a.map__link.content-section__link(href='404.html') read more
+      img.map__image.content-section__image.ancor(src='./assets/img/03.jpg')

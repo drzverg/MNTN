@@ -1,0 +1,174 @@
+@use "../../layouts/default/default.scss" as variables;
+
+.footer {
+  box-sizing: border-box;
+  background-color: #0B1D26;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding: 200px 5vw 100px 5vw;
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__logo {
+    color: #FFFFFF;
+    font-family: "Cormorant";
+    font-weight: 700;
+    font-size: 1.35em;
+    text-decoration: none;
+    letter-spacing: 1px;
+  }
+}
+
+
+/*
+.footer {
+  margin-top: 140px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 4px 0 4px;
+  gap: 215px;
+  @media (max-width: variables.$md1) {
+    gap: 75px;
+  }
+  @media (max-width: variables.$md3) {
+    margin-top: 30px;
+  }
+  &__main {
+    @media (max-width: variables.$md3) {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  &__logo {
+    display: flex;
+    width: 220px;
+    height: 57px;
+    overflow: hidden;
+  }
+  &__text {
+    max-width: 300px;
+    line-height: 24px;
+    color: variables.$textColorGeneral;
+    margin-top: 23px;
+    @media (max-width: variables.$md3) {
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
+}
+
+.footer-socials {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin-top: 26px;
+  @media (max-width: variables.$md3) {
+    margin-top: 15px;
+  }
+  &__link {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: #FE753F;
+    border: none;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75em;
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }  
+    &:active {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+//Footer menu ========================================================================================================================================
+
+.footer-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  gap: 50px;
+  @media (max-width: variables.$md3) {
+    display: none;
+  }
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 1.375em;
+    margin-top: 10px;
+    line-height: 33px;
+    color: #030A1B;
+  }
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 7px;
+  }
+  &__link {
+    color: variables.$textColorGeneral;
+    text-decoration: none;
+  }
+  &__address {
+    color: variables.$textColorGeneral;
+    line-height: 25px;
+    white-space: nowrap;
+    &_internet  {
+      color: variables.$textColorGeneral;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    &_phone {
+      color: variables.$textColorGeneral;
+      text-decoration: none;
+    }
+  } 
+}
+
+//Icons ==============================================================================================================================================
+
+.icon-font {
+  font-family: icons;
+  &_facebook:before {
+    content: "\e904";
+    color: #FFFFFF;
+  }
+  &_instagram:before {
+    content: "\e909";
+    color: #FFFFFF;
+  }
+  &_twitter:before {
+    content: "\e90f";
+    color: #FFFFFF;
+  }
+  &_youtube:before {
+    content: "\e910";
+    color: #FFFFFF;
+  }
+  &_linkedin:before {
+    content: "\e908";
+    color: #FFFFFF;
+  }
+}*/

@@ -1,0 +1,309 @@
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+var __webpack_exports__ = {};
+//Import Styles
+
+
+const mountains = document.querySelector('.parallax__mountains');
+const hero = document.querySelector('.parallax__hero');
+const siteTitle = document.querySelector('.main__content');
+const socials = document.querySelector('.main__socials');
+
+window.addEventListener('scroll', function() {
+  var value = window.scrollY;
+
+  var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+
+  mountains.style.top = 25 - (value * 0.12) + '%';
+  hero.style.top = 50 - (value * 0.1) + '%';
+
+  siteTitle.style.opacity = Math.max(0, Math.min(1, -scroll / 300 + 2));
+  socials.style.opacity = Math.max(0, Math.min(1, -scroll / 300 + 2));
+
+})
+
+const anchors = document.querySelectorAll('a[href*="#"]')
+
+for (let anchor of anchors) {
+  anchor.addEventListener('click', function (e) {
+  e.preventDefault()
+   
+  const blockID = anchor.getAttribute('href').substr(1)
+   
+  document.getElementById(blockID).scrollIntoView({
+  behavior: 'smooth',
+  block: 'center'
+  })
+  })
+}
+
+
+
+/*const searchOptions = document.querySelectorAll(".main-section__search-options-btn");
+
+for (const searchOption of searchOptions) {
+  searchOption.addEventListener("click", ()=> {
+    searchOptions.forEach((searchOption)=> {
+      searchOption.classList.remove("main-section__search-options-btn_active")
+    })
+  searchOption.classList.add("main-section__search-options-btn_active")
+  })
+}*/
+
+const slidebarItems = document.querySelectorAll('.sidebar__item');
+
+for(const slidebarItem of slidebarItems) {
+  slidebarItem.addEventListener("click", ()=> {
+    slidebarItems.forEach((slidebarItem)=> {
+      slidebarItem.classList.remove("sidebar__item_active");
+    })
+  slidebarItem.classList.add("sidebar__item_active");
+  })
+}
+
+
+// функция всего лишь добавляет CSS-класс, который и осуществляет анимацию
+const scrollImations = (entries, observer) => {
+	entries.forEach((entry) => {
+		// анимируем, если элемент целиком попадает в отслеживаемую область
+		if(entry.isIntersecting && entry.intersectionRatio == 1) {
+			
+      console.log(entry);
+		} else {
+			console.log('pau');
+		}
+	});
+}
+
+// создаём обсервер с параметрами
+const options = {
+	threshold: 1.0,
+};
+const observer = new IntersectionObserver(scrollImations, options);
+
+const boxes = document.querySelectorAll('.ancor');
+boxes.forEach((box) => {
+	observer.observe(box);
+});
+
+
+
+
+
+
+/*const mountains = document.querySelector('.parallax-images__mountains');
+const human = document.querySelector('.parallax-images__human');
+const clouds = document.querySelector('.parallax-images__clouds');
+
+window.addEventListener('scroll', function() {
+  var value = window.scrollY;
+  mountains.style.top = 40 - (value * 0.03) + '%';
+  clouds.style.top = -(value * 0.04) + '%';
+  human.style.top = 66 - (value * 0.01) + '%';
+})
+
+
+
+/*
+
+
+//Import images
+import "../src/assets/img/logo.svg";
+import '../src/assets/img/favicon.ico';
+
+import "../src/assets/img/main-section-img-cover.jpg";
+import "../src/assets/img/main-section-img.jpg";
+import "../src/assets/img/feautured-img.jpg";
+import "../src/assets/img/line.svg";
+
+import "../src/assets/img/biotech.svg";
+import "../src/assets/img/express.svg";
+import "../src/assets/img/smilehome.svg";
+import "../src/assets/img/connect.svg";
+import "../src/assets/img/homebuild.svg";
+
+import "../src/assets/img/properties/banyon-tree-realty.jpg";
+import "../src/assets/img/properties/capital-hill-residence.jpg";
+import "../src/assets/img/properties/picket-fence-realty.jpg";
+import "../src/assets/img/properties/corsair-real-estate.jpg";
+import "../src/assets/img/properties/sequoia-real-estate.jpg";
+import "../src/assets/img/properties/strive-partners-realty.jpg";
+
+import "../src/assets/img/security_ico.svg";
+import "../src/assets/img/air_ico.svg";
+import "../src/assets/img/garden_ico.svg";
+import "../src/assets/img/parking_ico.svg";
+import "../src/assets/img/furniture_ico.svg";
+import "../src/assets/img/pool_ico.svg";
+
+import "../src/assets/img/reviewers/acathe.jpg";
+import "../src/assets/img/reviewers/jlee.jpg";
+import "../src/assets/img/reviewers/rev_1_fem.jpg";
+import "../src/assets/img/reviewers/rev_1_m.jpg";
+import "../src/assets/img/reviewers/rev_2_fem.jpg";
+import "../src/assets/img/reviewers/rev_2_m.jpg";
+import "../src/assets/img/reviewers/rev_3_fem.jpg";
+import "../src/assets/img/reviewers/rev_3_m.jpg";
+
+//Slider
+
+import noUiSlider from 'nouislider';
+import '../node_modules/nouislider/dist/nouislider.min.css'
+
+var nonLinearStepSlider = document.getElementById('slider-non-linear-step');
+
+noUiSlider.create(nonLinearStepSlider, {
+    start: [500, 4000],
+    range: {
+        'min': [0],
+        '10%': [500, 500],
+        '50%': [4000, 1000],
+        'max': [9000]
+    }
+});
+
+var nonLinearStepSliderValueElement = document.getElementById('slider-non-linear-step-value');
+
+nonLinearStepSlider.noUiSlider.on('update', function (values) {
+  let cleanValues = [];
+  for (const value of values) {
+    cleanValues.push('$' + Math.round(value));
+  }
+  nonLinearStepSliderValueElement.innerHTML = cleanValues.join(' - ');
+});
+
+const sliderContainer = document.querySelector(".slider__container");
+const sliderHeader = document.querySelector(".slider__header");
+
+sliderHeader.addEventListener("click", ()=> {
+  if(sliderContainer.classList.contains("slider__container_active")) {
+    hideSlider();
+  } else {
+    showSlider();
+  }
+  
+})
+
+function showSlider() {
+  sliderContainer.classList.add("slider__container_active");
+}
+
+function hideSlider() {
+  sliderContainer.classList.remove("slider__container_active");
+}
+
+//Search options
+const searchOptions = document.querySelectorAll(".main-section__search-options-btn");
+
+for (const searchOption of searchOptions) {
+  searchOption.addEventListener("click", ()=> {
+    searchOptions.forEach((searchOption)=> {
+      searchOption.classList.remove("main-section__search-options-btn_active")
+    })
+  searchOption.classList.add("main-section__search-options-btn_active")
+  })
+}
+
+//Search dropdowns
+const dropdowns = document.querySelectorAll('.dropdown');
+const dropdownMenus = document.querySelectorAll('.dropdown__list');
+const dropdownItems = document.querySelectorAll('.dropdown__item');
+const dropdownTexts = document.querySelectorAll('.dropdown__text');
+
+dropdowns.forEach((dropdown, i) => {
+  dropdown.addEventListener('click', () => {
+    showDropdownMenu(i);
+  })
+})
+
+function showDropdownMenu(n) {
+  if(dropdownMenus[n].classList.contains('dropdown__list_active')) {
+    hideDropdowns();
+  }
+  else {
+    hideDropdowns();
+    dropdownMenus[n].classList.add('dropdown__list_active');
+    dropdownTexts[n].classList.add('dropdown__text_target');
+  }
+}
+
+function hideDropdowns() {
+  dropdownMenus.forEach((dropdownMenu) => {
+    dropdownMenu.classList.remove('dropdown__list_active');
+  })
+  dropdownTexts.forEach((dropdownText) => {
+    dropdownText.classList.remove('dropdown__text_target');
+  })
+}
+
+window.addEventListener('click', e => {
+  const target = e.target
+  if (!target.closest('.dropdown__list') && !target.closest('.dropdown')) {
+    hideDropdowns();
+  }
+  if (!target.closest('.slider__container') && !target.closest('.slider__header')) {
+    hideSlider();
+  }
+})
+
+dropdownItems.forEach((item) => {
+  item.addEventListener('click', () => {
+    if (item.textContent.length > 10) {
+      document.querySelector('.dropdown__text_target').textContent = item.textContent.substring(0, 10) + '...';
+    } else {
+      document.querySelector('.dropdown__text_target').textContent = item.textContent;
+    }
+  })
+})
+
+//Like button
+const likes = document.querySelectorAll(".property-card__like");
+
+for (const like of likes) {
+  like.addEventListener("click", ()=> {
+    if (like.classList.contains("property-card__like_clicked")) {
+      like.classList.remove("property-card__like_clicked")
+    }
+    else {
+      like.classList.add("property-card__like_clicked")
+    }
+  })
+}
+
+//Reviews slider
+const slides = document.querySelectorAll(".reviews__block");
+const dots = document.querySelectorAll(".reviews__slider-dot");
+
+dots.forEach((dot, i) => {
+  dot.addEventListener("click", () => {
+    showSlides(i);
+    showUp(slides[i]);
+  })
+})
+
+function showSlides(n) {
+  slides.forEach((slide) => {
+    slide.classList.remove("reviews__block_active")
+  })
+  dots.forEach((dot) => {
+    dot.classList.remove("reviews__slider-dot_active")
+  })
+  slides[n].classList.add("reviews__block_active")
+  dots[n].classList.add("reviews__slider-dot_active")
+}
+
+function showUp(target) {
+  target.style.opacity = 0;
+  var opacity = 0.1;
+  var steps = 5;
+  var d0 = opacity / steps;
+  setInterval(function() {
+    if(opacity <= 1) {
+      opacity += d0;
+      target.style.opacity = opacity;
+      steps++;
+    }
+  })
+}*/
+/******/ })()
+;

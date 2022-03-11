@@ -1,0 +1,72 @@
+//Variables ==========================================================================================================================================
+
+  //Screen sizes ------------------------------
+    $md1: 1024px;
+    $md2: 960px;
+    $md3: 768px;
+    $md4: 480px;
+
+  //Colors ------------------------------
+    $textColorGeneral: rgba(3, 10, 27, 0.7);
+
+  //Wrappers ------------------------------
+    $maxWidthSite: 100vw;
+    $maxWidthContent: 100%;
+
+  //Fonts ------------------------------
+    $defaultFont: "Montserrat";
+
+//Null ===============================================================================================================================================
+* {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+
+//Fonts ==============================================================================================================================================
+@mixin font($font_name, $file_name, $weight, $style) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: local($font_name), url("/src/assets/fonts/#{$font_name}/#{$file_name}.eot"), url("/src/assets/fonts/#{$font_name}/#{$file_name}.woff") format("woff"), url("/src/assets/fonts/#{$font_name}/#{$file_name}.ttf") format("truetype"), url("/src/assets/fonts/#{$font_name}/#{$file_name}.svg") format("svg");//, url("../assets/fonts/#{$font_name}/#{$file_name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
+
+@include font("Montserrat", "Montserrat-Medium", "500", "normal");
+@include font("Montserrat", "Montserrat-Bold", "700", "normal");
+@include font("Montserrat", "Montserrat-ExtraBold", "800", "normal");
+@include font("Cormorant", "Cormorant-SemiBold", "600", "normal");
+@include font("Cormorant", "Cormorant-Bold", "700", "normal");
+@include font("icons", "icons", "normal", "normal");
+
+
+.site-wrapper {
+  margin: 0 auto;
+  max-width: $maxWidthSite;
+  font-family: $defaultFont;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-wrapper {
+
+}
+
+//Buttons ------------------------------------------------------------------------------------------
+
+/*.button {
+  box-sizing: border-box;
+  font-family: "Poppins";
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 24px;
+  border: none;
+  background-color: #2E6EFF;
+  color: #FFFFFF;
+  &:active {
+    background-color: #FE753F;
+  }
+}*/
