@@ -84,6 +84,10 @@
     font-size: 3.3em;
     line-height: 60px;
     font-weight: 600;
+    @media (max-width: variables.$md2) {
+      font-size: 2.5em;
+      line-height: 40px;
+    }
   }
   &__link {
     display: flex;
@@ -116,6 +120,7 @@
 
 .icon-font {
   font-family: icons;
+  text-decoration: none;
   &_instagram:before {
     content: "\e903";
     color: #FFFFFF;
@@ -195,6 +200,9 @@
 
 .started {
   margin-top: -25%;
+  @media (max-width: variables.$md2) {
+    margin-top: -30%;
+  }
   &::before {
     position: absolute;
     top: 0;
@@ -204,6 +212,9 @@
     font-weight: 700;
     color: #FFFFFF;
     opacity: 0.1;
+    @media (max-width: variables.$md2) {
+      display: none;
+    }
   }
   &__content {
     display: flex;
@@ -213,11 +224,18 @@
     box-sizing: border-box;
     padding-left: 10vw;
     gap: 27px;
+    @media (max-width: variables.$md2) {
+      padding-left: 0;
+      gap: 15px;
+    }
   }
 }
 
 .hiking {
   margin-top: 200px;
+  @media (max-width: variables.$md2) {
+    margin-top: 100px;
+  }
   &::before {
     position: absolute;
     top: 0;
@@ -227,6 +245,9 @@
     font-weight: 700;
     color: #FFFFFF;
     opacity: 0.1;
+    @media (max-width: variables.$md2) {
+      display: none;
+    }
   }
   &__content {
     display: flex;
@@ -236,12 +257,19 @@
     box-sizing: border-box;
     padding-left: 10vw;
     gap: 27px;
+    @media (max-width: variables.$md2) {
+      padding-left: 0;
+      gap: 15px;
+    }
   }
 }
 
 
 .map {
   margin-top: 200px;
+  @media (max-width: variables.$md2) {
+    margin-top: 100px;
+  }
   &::before {
     position: absolute;
     top: 0;
@@ -251,6 +279,9 @@
     font-weight: 700;
     color: #FFFFFF;
     opacity: 0.1;
+    @media (max-width: variables.$md2) {
+      display: none;
+    }
   }
   &__content {
     display: flex;
@@ -260,6 +291,10 @@
     box-sizing: border-box;
     padding-left: 10vw;
     gap: 27px;
+    @media (max-width: variables.$md2) {
+      padding-left: 0;
+      gap: 15px;
+    }
   }
 }
 
@@ -269,6 +304,9 @@ h2 {
   font-size: 2.5em;
   line-height: 1.1em;
   font-weight: 600;
+  @media (max-width: variables.$md2) {
+    font-size: 1.5em;
+  }
 }
 
 h3 {
@@ -281,6 +319,9 @@ h3 {
   display: flex;
   align-items: center;
   gap: 10px;
+  @media (max-width: variables.$md2) {
+    font-size: 0.8em;
+  }
   &::before {
     content: '';
     width: 50px;
@@ -300,8 +341,10 @@ h3 {
     line-height: 1.5em;
     color: #FFFFFF;
     font-weight: 500;
+    
   }
   &__link {
+    font-size: 0.8em;
     display: flex;
     align-items: center;
     gap: 15px;

@@ -7,12 +7,22 @@
   position: relative;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   padding: 200px 5vw 100px 5vw;
-
+  gap: 15px;
+  @media (max-width: variables.$md2) {
+    padding: 100px 5vw 100px 5vw;
+  }
   &__main {
+    flex: 1 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
   }
   &__logo {
     color: #FFFFFF;
@@ -22,8 +32,49 @@
     text-decoration: none;
     letter-spacing: 1px;
   }
+  &__text {
+    font-size: 0.8em;
+    line-height: 1.5em;
+    color: #FFFFFF;
+    font-weight: 500;
+    max-width: 255px;
+  }
+  &__copyright {
+    font-size: 0.8em;
+    line-height: 1.5em;
+    color: #FFFFFF;
+    font-weight: 500;
+    opacity: 0.5;
+  }
 }
 
+
+.footer-menu {
+  flex: 0 0 35vw;
+  @media (max-width: variables.$md2) {
+    flex: 0 0 50%;
+  }
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  &__title {
+    color: #FBD784;
+    margin-bottom: 24px;
+  }
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &__link {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 0.8em;
+  }
+}
 
 /*
 .footer {
