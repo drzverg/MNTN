@@ -2,7 +2,7 @@
 
 .footer {
   box-sizing: border-box;
-  background-color: #0B1D26;
+  background-color: #0b1d26;
   width: 100%;
   position: relative;
   display: flex;
@@ -18,48 +18,50 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @media (max-width: variables.$md3) {
+      align-items: center;
+    }
   }
   &__content {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    @media (max-width: variables.$md3) {
+      align-items: center;
+    }
   }
-  &__logo {
-    color: #FFFFFF;
-    font-family: "Cormorant";
-    font-weight: 700;
-    font-size: 1.35em;
-    text-decoration: none;
-    letter-spacing: 1px;
-  }
+
   &__text {
     font-size: 0.8em;
     line-height: 1.5em;
-    color: #FFFFFF;
+    color: #ffffff;
     font-weight: 500;
     max-width: 255px;
   }
   &__copyright {
+    margin-top: 50px;
     font-size: 0.8em;
     line-height: 1.5em;
-    color: #FFFFFF;
+    color: #ffffff;
     font-weight: 500;
     opacity: 0.5;
   }
 }
-
 
 .footer-menu {
   flex: 0 0 35vw;
   @media (max-width: variables.$md2) {
     flex: 0 0 50%;
   }
+  @media (max-width: variables.$md3) {
+    display: none;
+  }
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   gap: 20px;
   &__title {
-    color: #FBD784;
+    color: #fbd784;
     margin-bottom: 24px;
   }
   &__list {
@@ -70,7 +72,7 @@
   }
   &__link {
     text-decoration: none;
-    color: #FFFFFF;
+    color: #ffffff;
     font-weight: 500;
     font-size: 0.8em;
   }

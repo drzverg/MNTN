@@ -1,26 +1,22 @@
 //Variables ==========================================================================================================================================
 
-  //Screen sizes ------------------------------
-    $md1: 1024px;
-    $md2: 960px;
-    $md3: 768px;
-    $md4: 480px;
+//Screen sizes ------------------------------
+$md1: 1024px;
+$md2: 960px;
+$md3: 768px;
+$md4: 480px;
 
-  //Colors ------------------------------
-    $textColorGeneral: rgba(3, 10, 27, 0.7);
+//Colors ------------------------------
+$textColorGeneral: rgba(3, 10, 27, 0.7);
 
-  //Wrappers ------------------------------
-    $maxWidthSite: 100vw;
-    $maxWidthContent: 100%;
-
-  //Fonts ------------------------------
-    $defaultFont: "Montserrat";
+//Fonts ------------------------------
+$defaultFont: "Montserrat";
 
 //Null ===============================================================================================================================================
 * {
-	padding: 0px;
-	margin: 0px;
-	border: 0px;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
 }
 
 //Fonts ==============================================================================================================================================
@@ -28,7 +24,12 @@
   @font-face {
     font-family: $font_name;
     font-display: swap;
-    src: local($font_name), url("/src/assets/fonts/#{$font_name}/#{$file_name}.eot"), url("/src/assets/fonts/#{$font_name}/#{$file_name}.woff") format("woff"), url("/src/assets/fonts/#{$font_name}/#{$file_name}.ttf") format("truetype"), url("/src/assets/fonts/#{$font_name}/#{$file_name}.svg") format("svg");//, url("../assets/fonts/#{$font_name}/#{$file_name}.woff2") format("woff2");
+    src: local($font_name),
+      url("/src/assets/fonts/#{$font_name}/#{$file_name}.eot"),
+      url("/src/assets/fonts/#{$font_name}/#{$file_name}.woff") format("woff"),
+      url("/src/assets/fonts/#{$font_name}/#{$file_name}.ttf")
+        format("truetype"),
+      url("/src/assets/fonts/#{$font_name}/#{$file_name}.svg") format("svg"); //, url("../assets/fonts/#{$font_name}/#{$file_name}.woff2") format("woff2");
     font-weight: #{$weight};
     font-style: #{$style};
   }
@@ -41,32 +42,26 @@
 @include font("Cormorant", "Cormorant-Bold", "700", "normal");
 @include font("icons", "icons", "normal", "normal");
 
-
 .site-wrapper {
   margin: 0 auto;
-  max-width: $maxWidthSite;
+  max-width: 100vw;
   font-family: $defaultFont;
   font-size: 18px;
   display: flex;
   flex-direction: column;
+  background-color: #0b1d26;
 }
 
 .content-wrapper {
-
+  box-sizing: border-box;
+  padding: 0 5vw;
 }
 
-//Buttons ------------------------------------------------------------------------------------------
-
-/*.button {
-  box-sizing: border-box;
-  font-family: "Poppins";
-  font-size: 1em;
-  font-weight: 500;
-  line-height: 24px;
-  border: none;
-  background-color: #2E6EFF;
-  color: #FFFFFF;
-  &:active {
-    background-color: #FE753F;
-  }
-}*/
+.site-logo {
+  color: #ffffff;
+  font-family: "Cormorant";
+  font-weight: 700;
+  font-size: 1.35em;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
